@@ -21,10 +21,10 @@ def sendEmail():
 
 def recordClip(fileName):
 	camera.start_preview()
-    camera.start_recording(fileName)
-    sleep(10)
-    camera.stop_recording()
-    camera.stop_preview()
+	camera.start_recording(fileName)
+	sleep(10)
+	camera.stop_recording()
+	camera.stop_preview()
 
 
 # Configure pin numbering to Broadcom reference and
@@ -52,11 +52,11 @@ try:
         	fileName = '/home/pi/video-' + str(counter) + '.h264'
 	        print ("----- Motion detected -----")
 	        counter = counter + 1
-		    recordClip(fileName)
-		    sendEmail()
+		recordClip(fileName)
+		sendEmail()
         else:
-		    print('----- No motion -----')
-		    sleep(2)
+		print('----- No motion -----')
+		sleep(2)
 
 except KeyboardInterrupt:
     print ("Shutting Down")
